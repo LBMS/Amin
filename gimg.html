@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Template Name: Education Time
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>LBMS - Gallery</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
+<script type="text/javascript" src="layout/scripts/jquery.min.js"></script>
+<!-- prettyPhoto -->
+<link rel="stylesheet" href="layout/scripts/prettyphoto/prettyPhoto.css" type="text/css" />
+<script type="text/javascript" src="layout/scripts/prettyphoto/jquery.prettyPhoto.js"></script>
+
+
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="fancybox/lib/jquery-1.8.2.min.js"></script>
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="fancybox/source/jquery.fancybox.js?v=2.1.2"></script>
+	<link rel="stylesheet" type="text/css" href="fancybox/source/jquery.fancybox.css?v=2.1.2" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.4"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+	<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+                </style>
+
+
+
+<style type="text/css">
+	
+.fancybox-buttons img
+{ 
+box-shadow:3px 6px 6px 3px #C66;
+border-radius:20%;
+padding:5px;
+}
+
+
+</style>
+
+<!-- / prettyPhoto -->
+</head>
+<body id="top">
+<div class="wrapper row1" style="border:thick solid #009">
+  <div id="header" class="clear" >
+    <div class="fl_left1" align="right" >
+      <h1><a href="index.php">Louis Braille Memorial School For The Sight Less(High)</a></h1>
+      <CENTER><p><FONT size="+1">SPONSORED BY GOVT. OF WEST BENGAL</FONT></p></CENTER>
+    </div>
+   <p align="left" > <img src="images/logout.png" width="80px" height="60px"  /></p>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper row2">
+  <div id="topnav">
+    <ul>
+      <li ><a href="index.php">Homepage</a></li>
+      <li><a href="#">Profile</a>
+        <ul>
+          <li><a href="about_us.html">About Us</a></li>
+           <li><a href="awareness.html">Awareness Program</a></li>
+          <li><a href="award.php">Awards</a></li>
+          <li><a href="mission.html">Mission</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="stuff.php">Stuff List</a></li>
+		 
+        </ul>
+      </li>
+      <li><a href="admissionEntry.html">Admission</a></li>
+      <li><a href="result.php">Result</a></li>
+      
+          
+      <li><a href="donation1.php">Donation</a></li>
+      <li><a href="alumni.php">Alumni</a></li>
+      <li><a href="donor.php">Donors</a></li>
+      <li class="active"><a href="gallery.html">Gallery</a></li>
+	  <li ><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div  class="clear"></div>
+  </div>
+</div>
+<!--#############################################-->
+<div class="wrapper row4">
+  <div id="container" class="clear"> 
+  <div id="gallery" class="clear">
+      
+      <!-- ########### -->
+      <div class="gallerycontainer clear">
+        <div class="fl_left">
+		<FONT SIZE="5" COLOR="GREEN" FACE="CURSIVE">
+                    <CAPTION class="title">Latest Images</CAPTION></font>
+		<hr />
+          <FONT SIZE="3" COLOR="BLUE" FACE="COMIC SANS MS"> 
+          <p>various picture.....</p></FONT>
+         <!-- <p class="readmore"><a href="#">View All &raquo;</a></p>-->
+        </div>
+        <div class="fl_right">
+          
+	<p>
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a1.JPG"><img src="images/a1.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a2.JPG"><img src="images/a2.JPG" alt="" width=20% height=15% /></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a3.JPG"><img src="images/a3.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a4.JPG"><img src="images/a4.JPG" alt="" width=20% height=15% /></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a5.JPG"><img src="images/a5.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a6.JPG"><img src="images/a6.JPG" alt="" width=20% height=15% /></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a7.JPG"><img src="images/a7.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a8.JPG"><img src="images/a8.JPG" alt="" width=20% height=15% /></a>
+	
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a9.JPG"><img src="images/a9.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a10.JPG"><img src="images/a10.JPG" alt="" width=20% height=15% /></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a11.JPG"><img src="images/a11.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a12.JPG"><img src="images/a12.JPG" alt="" width=20% height=15% /></a>
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a13.JPG"><img src="images/a13.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a14.JPG"><img src="images/a14.JPG" alt="" width=20% height=15% /></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a15.JPG"><img src="images/a15.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a16.JPG"><img src="images/a16.JPG" alt="" width=20% height=15% /></a>
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a17.JPG"><img src="images/a17.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a18.JPG"><img src="images/a18.JPG" alt="" width=20% height=15% /></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a19.JPG"><img src="images/a19.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a20.JPG"><img src="images/a20.JPG" alt="" width=20% height=15% /></a>
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/21.JPG"><img src="images/a21.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a22.JPG"><img src="images/a22.JPG" alt="" width=20% height=15% /></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a23.JPG"><img src="images/a23.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a1.JPG"><img src="images/a1.JPG" alt="" width=20% height=15% /></a>
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a7.JPG"><img src="images/a7.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a5.JPG"><img src="images/a5.JPG" alt="" width=20% height=15% /></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a3.JPG"><img src="images/a3.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a1.JPG"><img src="images/a1.JPG" alt="" width=20% height=15% /></a>
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a7.JPG"><img src="images/a7.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a5.JPG"><img src="images/a5.JPG" alt="" width=20% height=15% /></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a3.JPG"><img src="images/a3.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a1.JPG"><img src="images/a1.JPG" alt="" width=20% height=15% /></a>
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a7.JPG"><img src="images/a7.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a5.JPG"><img src="images/a5.JPG" alt="" width=20% height=15% /></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a3.JPG"><img src="images/a3.JPG" alt="" width=20% height=15%/></a>
+
+		<a class="fancybox-buttons" data-fancybox-group="button" href="images/a1.JPG"><img src="images/a1.JPG" alt="" width=20% height=15% /></a>
+	
+		</p>
+            
+            
+            
+          </ul>
+        </div>
+      </div>
+      <!-- ########### --> 
+    </div>
+    <!-- ####################################################################################################### -->
+<div class="wrapper">
+  <div id="copyright" class="clear">
+    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#">Louis Braille Memorial School For The Sight Less(High)</a></p>
+    <p class="fl_right">Powred by <a target="_blank" href="#" title="My Website Templates"><b><u>  Sovon & Aminuddin</u></b></a></p>
+  </div>
+</div>
+
+</body>
+</html>
